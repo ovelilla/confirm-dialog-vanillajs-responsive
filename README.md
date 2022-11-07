@@ -2,7 +2,7 @@
 Responsive vanilla JavaScript confirm dailog
 
 
-Demo: https://bright-sawine-ee9de0.netlify.app/
+Demo: https://iridescent-parfait-865a98.netlify.app
 
 
 ```

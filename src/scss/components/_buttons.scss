@@ -16,8 +16,8 @@
 .secondary-btn {
     @include m.btn(600);
     background-color: v.$transparent;
-    color: v.$gray-400;
-    border: 2px solid v.$gray-300;
+    color: v.$slate-400;
+    border: 2px solid v.$slate-300;
 
     &:hover {
         background-color: v.$transparent;

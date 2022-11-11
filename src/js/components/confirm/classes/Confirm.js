@@ -6,6 +6,7 @@ class Confirm {
         Object.assign(this, data);
 
         this.isClose = false;
+        this.isNoscroll = false;
 
         this.init();
     }
@@ -47,8 +48,12 @@ class Confirm {
         this.confirm = this.create();
         document.body.appendChild(this.confirm);
 
-        if (document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) {
-            document.body.classList.add("noscroll");
+        if (document.body.scrollHeight > document.body.clientHeight) {
+            if (document.body.classList.contains("noscroll")) {
+                this.isNoscroll = true;
+            } else {
+                document.body.classList.add("noscroll");
+            }
         }
 
         await tools.animationend(this.confirm);
@@ -126,7 +131,9 @@ class Confirm {
     async close() {
         this.isClose = false;
 
-        document.body.classList.remove("noscroll");
+        if (!this.isNoscroll) {
+            document.body.classList.remove("noscroll");
+        }
         this.confirm.classList.add("out");
 
         await tools.animationend(this.confirm);
